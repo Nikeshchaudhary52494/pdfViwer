@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Upload App</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="formContainer">
+        <h1 class="mainHeading">PDF Upload App</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf" accept=".pdf" required>
+            <button type="submit">Upload PDF</button>
+        </form>
+    </div>
+    <h2 class="heading">Uploaded PDFs</h2>
+    <ul id="pdf-list"></ul>
+
+    <script>
+        async function fetchPDFs() {
+            const response = await fetch('/pdfs');
+            const pdfs = await response.json();
+            const pdfList = document.getElementById('pdf-list');
+
+            pdfList.innerHTML = pdfs.map(pdf => {
+                return `<li class="pdfList">
+                  <span class="pdfListName">${pdf.name}</span>
+                  <a href="/pdf/${pdf._id}" target="_blank" class="pdfLink" >View</a>
+                </li>`;
+            }).join('');
+        }
+
+        fetchPDFs();
+    </script>
+</body>
+
+</html>

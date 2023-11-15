@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+button {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: blue;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.mainHeading {
+    color: darkgreen;
+    padding: 10px;
+    margin: 10px;
+}
+
+.formContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    padding: 50px;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+.heading {
+    font-weight: bold;
+    color: blue;
+}
+
+.pdfList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 10px;
+    background-color: rgb(18, 154, 108);
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.pdfListName {
+    color: white;
+}
+
+.pdfLink {
+    text-decoration: none;
+    color: blue;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: aquamarine;
+}
